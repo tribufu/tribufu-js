@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 
 java -jar ./vendor/openapi-generator/openapi-generator-cli.jar generate `
-    -i https://api.tribufu.com/openapi.json `
+    -i http://localhost:5000/openapi.json `
     -g typescript-fetch `
     -o . `
     --global-property apis,models,supportingFiles,apiDocs=false,modelDocs=false,apiTests=false,modelTests=false `

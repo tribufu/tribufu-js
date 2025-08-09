@@ -6,3 +6,4 @@ git_push.sh
 package.json
 README.md
 src/index.ts
+tsconfig.json
