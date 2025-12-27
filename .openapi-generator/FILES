@@ -18,7 +18,7 @@ src/models/GameServerQuery.ts
 src/models/GameServerStatus.ts
 src/models/GrantType.ts
 src/models/Group.ts
-src/models/GroupGame.ts
+src/models/GroupApplication.ts
 src/models/GroupMember.ts
 src/models/GroupRank.ts
 src/models/HashViewModel.ts
@@ -28,9 +28,11 @@ src/models/IpAddress.ts
 src/models/LeaderboardItem.ts
 src/models/LeaderboardOrder.ts
 src/models/LoginProvider.ts
-src/models/ModelFile.ts
 src/models/Package.ts
 src/models/PackageRelease.ts
+src/models/Product.ts
+src/models/ProductPrice.ts
+src/models/ProductType.ts
 src/models/Profile.ts
 src/models/ProfileGame.ts
 src/models/ProfileGroup.ts
@@ -39,8 +41,7 @@ src/models/RevokeRequest.ts
 src/models/Search.ts
 src/models/SearchType.ts
 src/models/ServerMetrics.ts
-src/models/Subscription.ts
-src/models/SubscriptionPrice.ts
+src/models/StorageFile.ts
 src/models/TokenHintType.ts
 src/models/TokenRequest.ts
 src/models/TokenResponse.ts
