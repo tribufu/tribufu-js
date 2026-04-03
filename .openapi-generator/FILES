@@ -1,6 +1,5 @@
 src/apis/TribufuGeneratedApi.ts
 src/apis/index.ts
-src/models/Account.ts
 src/models/Application.ts
 src/models/ApplicationType.ts
 src/models/AuthorizeRequest.ts
@@ -11,6 +10,7 @@ src/models/CodeChallengeMethod.ts
 src/models/CodeResponse.ts
 src/models/CreateUser.ts
 src/models/CryptoViewModel.ts
+src/models/ExternalAccount.ts
 src/models/Game.ts
 src/models/GameServer.ts
 src/models/GameServerCluster.ts
@@ -22,12 +22,12 @@ src/models/GroupApplication.ts
 src/models/GroupMember.ts
 src/models/GroupRank.ts
 src/models/HashViewModel.ts
+src/models/IdentityProviderType.ts
 src/models/IntrospectRequest.ts
 src/models/IntrospectResponse.ts
 src/models/IpAddress.ts
 src/models/LeaderboardItem.ts
 src/models/LeaderboardOrder.ts
-src/models/LoginProvider.ts
 src/models/Package.ts
 src/models/PackageRelease.ts
 src/models/Product.ts

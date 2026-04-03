@@ -1,6 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export * from './Account';
 export * from './Application';
 export * from './ApplicationType';
 export * from './AuthorizeRequest';
@@ -11,6 +10,7 @@ export * from './CodeChallengeMethod';
 export * from './CodeResponse';
 export * from './CreateUser';
 export * from './CryptoViewModel';
+export * from './ExternalAccount';
 export * from './Game';
 export * from './GameServer';
 export * from './GameServerCluster';
@@ -22,12 +22,12 @@ export * from './GroupApplication';
 export * from './GroupMember';
 export * from './GroupRank';
 export * from './HashViewModel';
+export * from './IdentityProviderType';
 export * from './IntrospectRequest';
 export * from './IntrospectResponse';
 export * from './IpAddress';
 export * from './LeaderboardItem';
 export * from './LeaderboardOrder';
-export * from './LoginProvider';
 export * from './Package';
 export * from './PackageRelease';
 export * from './Product';
