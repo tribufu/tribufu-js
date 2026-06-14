@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { Configuration } from "./runtime";
+import { Credentials, CredentialsType } from "./credentials";
 import { JavaScriptRuntime } from "./node";
 import { TRIBUFU_API_URL, TRIBUFU_VERSION } from "./constants";
 import { TribufuGeneratedApi } from "./apis/TribufuGeneratedApi";
@@ -20,12 +21,12 @@ export * from "./singletion";
  */
 export class TribufuApi extends TribufuGeneratedApi {
     /**
-     * Create a TribufuApi with the given API key.
+     * Create a TribufuApi with the credentials.
      *
-     * @param apiKey The API key for authentication.
+     * @param credentials The credentials for authentication.
      */
-    constructor(apiKey: string | null = null) {
-        super(TribufuApi.createConfiguration(apiKey));
+    constructor(credentials: Credentials | null = null) {
+        super(TribufuApi.createConfiguration(credentials));
     }
 
     /**
@@ -46,7 +47,19 @@ export class TribufuApi extends TribufuGeneratedApi {
      * @returns TribufuApi
      */
     public static withApiKey(apiKey: string): TribufuApi {
-        return new TribufuApi(apiKey);
+        return new TribufuApi({ type: CredentialsType.ApiKey, value: apiKey });
+    }
+
+    /**
+     * Create a TribufuApi with the given access token.
+     *
+     * - A access token give you user read and write access to the Tribufu API.
+     *
+     * @param accessToken
+     * @returns TribufuApi
+     */
+    public static withAccessToken(accessToken: string): TribufuApi {
+        return new TribufuApi({ type: CredentialsType.Bearer, value: accessToken });
     }
 
     /**
@@ -96,14 +109,21 @@ export class TribufuApi extends TribufuGeneratedApi {
     /**
      * Creates a configuration for the Tribufu API client.
      */
-    private static createConfiguration(apiKey: string | null): Configuration {
+    private static createConfiguration(credentials: Credentials | null): Configuration {
         const basePath = this.getBaseUrl();
         const headers: Record<string, string> = {
             "User-Agent": this.getUserAgent(),
         };
 
-        if (apiKey) {
-            headers["Authorization"] = `ApiKey ${apiKey}`;
+        if (credentials) {
+            switch (credentials.type) {
+                case CredentialsType.ApiKey:
+                    headers["Authorization"] = `ApiKey ${credentials.value}`;
+                    break;
+                case CredentialsType.Bearer:
+                    headers["Authorization"] = `Bearer ${credentials.value}`;
+                    break;
+            }
         }
 
         return new Configuration({
