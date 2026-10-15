@@ -1,15 +1,16 @@
 // Copyright (c) Tribufu. All Rights Reserved.
 // SPDX-License-Identifier: MIT
 
-import packageJson from "../package.json";
+import { version } from "../package.json";
 
-export const TRIBUFU_VERSION: string = packageJson.version;
+export const TRIBUFU_VERSION: string = version;
 
 export const TRIBUFU_COPYRIGHT = `© ${new Date().getFullYear()} Tribufu.`;
 export const TRIBUFU_COPYRIGHT_WITH_RIGHTS = `${TRIBUFU_COPYRIGHT} All Rights Reserved.`;
 export const TRIBUFU_COPYRIGHT_WITH_YEARS = `Copyright © 2016-${new Date().getFullYear()} Tribufu`;
 
 export const TRIBUFU_API_URL: string = "https://api.tribufu.com";
+export const TRIBUFU_AUTH_URL: string = "https://auth.tribufu.com";
 export const TRIBUFU_COMMUNITY_URL: string = "https://www.tribufu.com";
 export const TRIBUFU_DOCS_URL: string = "https://docs.tribufu.com";
 export const TRIBUFU_GIT_URL: string = "https://git.tribufu.com";

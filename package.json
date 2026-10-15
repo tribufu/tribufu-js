@@ -1,37 +1,46 @@
 {
     "name": "tribufu",
-    "version": "1.4.3",
+    "version": "1.5.0",
     "description": "Tribufu JS SDK",
     "repository": "https://github.com/tribufu/tribufu-js",
-    "author": "Tribufu <contact@Tribufu.com>",
+    "author": "Tribufu <contact@tribufu.com>",
     "license": "MIT",
     "type": "module",
-    "types": "./build/index.d.ts",
-    "exports": {
-        "types": "./build/index.d.ts",
-        "require": "./build/index.cjs",
-        "import": "./build/index.mjs"
+    "packageManager": "pnpm@9.12.3",
+    "engines": {
+        "node": ">=18"
     },
-    "typesVersions": {
-        "*": {
-            "*": [
-                "./build/*"
-            ]
-        }
+    "sideEffects": false,
+    "files": [
+        "build"
+    ],
+    "main": "./build/index.cjs",
+    "module": "./build/index.mjs",
+    "types": "./build/index.d.cts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./build/index.d.mts",
+                "default": "./build/index.mjs"
+            },
+            "require": {
+                "types": "./build/index.d.cts",
+                "default": "./build/index.cjs"
+            }
+        },
+        "./package.json": "./package.json"
     },
     "scripts": {
-        "clean": "rimraf build",
-        "build": "npm run clean && tsc && node scripts/esbuild.js"
+        "build": "tsdown",
+        "generate": "openapi-generator-cli generate -i http://localhost:46400/openapi.json -g typescript-fetch -o . --global-property apis,models,supportingFiles,apiDocs=false,modelDocs=false,apiTests=false,modelTests=false --additional-properties=modelPackage=models,apiPackage=api,npmName=tribufu,prettier=true,useSingleRequestParameter=false --openapi-normalizer SET_TAGS_FOR_ALL_OPERATIONS=TribufuGenerated --skip-validate-spec",
+        "typecheck": "tsc --noEmit"
     },
-    "dependencies": {},
     "devDependencies": {
-        "@types/node": "^20.10.6",
+        "@openapitools/openapi-generator-cli": "^2.41.0",
+        "@types/node": "^22",
         "dotenv": "^16.3.1",
-        "esbuild": "^0.25.0",
-        "esbuild-node-externals": "^1.12.0",
-        "eslint": "9.11.1",
         "prettier": "3.3.3",
-        "rimraf": "^5.0.5",
-        "typescript": "^5.3.3"
+        "tsdown": "^0.23.1",
+        "typescript": "^5.9.3"
     }
 }
