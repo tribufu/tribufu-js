@@ -38,3 +38,5 @@ keystore.jks
 local.properties
 Makefile
 next-env.d.ts
+
+.codegraph/
