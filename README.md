@@ -1,6 +1,6 @@
 # Tribufu JS
 
-JavaScript SDK to access Tribufu APIs and services.
+Open source JavaScript SDK for the public Tribufu API at `https://api.tribufu.com`.
 
 [![NPM][npm-badge]][npm-url]
 [![MIT License][mit-badge]][mit-url]
@@ -15,6 +15,17 @@ JavaScript SDK to access Tribufu APIs and services.
 
 [Website](https://www.tribufu.com) |
 [Discord](https://www.tribufu.com/discord)
+
+## Development
+
+```sh
+pnpm install
+pnpm typecheck
+pnpm build
+```
+
+Generate the client from the public API with `pnpm generate`. Its default schema is
+`https://api.tribufu.com/openapi.json`; `pnpm generate <path-or-url>` selects another OpenAPI document.
 
 ## License
 

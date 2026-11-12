@@ -13,10 +13,9 @@ export const TRIBUFU_API_URL: string = "https://api.tribufu.com";
 export const TRIBUFU_AUTH_URL: string = "https://auth.tribufu.com";
 export const TRIBUFU_COMMUNITY_URL: string = "https://www.tribufu.com";
 export const TRIBUFU_DOCS_URL: string = "https://docs.tribufu.com";
-export const TRIBUFU_GIT_URL: string = "https://git.tribufu.com";
+export const TRIBUFU_GIT_URL: string = "https://github.com/tribufu";
 export const TRIBUFU_MAVEN_URL: string = "https://mvn.tribufu.com";
 export const TRIBUFU_R2_URL: string = "https://r2.tribufu.com";
-export const TRIBUFU_S3_URL: string = "https://s3.tribufu.com";
 export const TRIBUFU_STATUS_URL: string = "https://status.tribufu.com";
 
 export const TRIBUFU_BLUESKY_URL: string = "https://bsky.app/profile/tribufu.com";
